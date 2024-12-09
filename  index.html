@@ -1,0 +1,118 @@
+
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源列表</title>
+    <style>
+        /* 通用样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        header {
+            background-color: #0078D4;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.8rem;
+        }
+        main {
+            margin: 2rem 24px; /* 距离屏幕边缘24px */
+            padding: 1.5rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: none; /* 去掉阴影 */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 0.8rem 0;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+        li:hover {
+            background-color: #eef6ff;
+            border-color: #0078D4;
+        }
+        a {
+            text-decoration: none;
+            color: #0078D4;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* 固定底部提示 */
+        .footer-bar {
+            position: fixed;
+            bottom: 32px; /* 距离屏幕底部32px */
+            right: 100px; /* 距离屏幕右侧100px */
+            background-color: #0078D4;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            min-width: 300px; /* 最小宽度，保证内容显示 */
+        }
+        .footer-bar span {
+            margin-left: 12px; /* 调整emoji的位置 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部标题 -->
+    <header>资源列表</header>
+
+    <!-- 页面主体 -->
+    <main>
+        <ul>
+            <li>
+                <a href="https://mastergo.com/goto/FuUvneXS?file=128862103934092" target="_blank">PC端组件库</a>
+            </li>
+            <li>
+                <a href="https://mastergo.com/goto/FuUocFQ8?file=122968394889071" target="_blank">移动端组件库</a>
+            </li>
+            <li>
+                <a href="https://mastergo.com/goto/FuUtOpcL?file=61833409762430" target="_blank">图标库</a>
+            </li>
+        </ul>
+    </main>
+
+    <!-- 吸底提示栏 -->
+    <div class="footer-bar">
+        体验小助手，请点击右下角进行对话。
+        <span>👉</span>
+    </div>
+
+    <!-- 集成 Coze Web SDK 并默认展开 -->
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.0.0-beta.4/libs/cn/index.js"></script>
+    <script>
+        new CozeWebSDK.WebChatClient({
+            config: {
+                bot_id: '7442536183781244965',
+            },
+            componentProps: {
+                title: 'Coze',
+                defaultOpen: true, // 聊天窗口默认展开
+            },
+        });
+    </script>
+</body>
+</html>
