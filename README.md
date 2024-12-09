@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>资源列表</title>
-    <!-- 美化样式 -->
     <style>
         /* 通用样式 */
         body {
@@ -59,11 +58,30 @@
         a:hover {
             text-decoration: underline;
         }
-        .footer {
+        /* 特别提示样式 */
+        .highlight {
+            margin: 2rem 0;
             text-align: center;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #555;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #0078D4;
+            background-color: #e8f4ff;
+            border: 2px solid #0078D4;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 10px rgba(0, 120, 212, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 15px rgba(0, 120, 212, 0.7);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(0, 120, 212, 0.5);
+            }
         }
     </style>
 </head>
@@ -85,10 +103,14 @@
                 <a href="https://mastergo.com/goto/FuUtOpcL?file=61833409762430" target="_blank">图标库</a>
             </li>
         </ul>
-        <p class="footer">体验小助手，请点击右下角进行对话。</p>
+
+        <!-- 特别提示 -->
+        <div class="highlight">
+            体验小助手，请点击右下角进行对话。
+        </div>
     </main>
 
-    <!-- 集成 Coze Web SDK -->
+    <!-- 集成 Coze Web SDK 并默认展开 -->
     <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.0.0-beta.4/libs/cn/index.js"></script>
     <script>
         new CozeWebSDK.WebChatClient({
@@ -97,6 +119,7 @@
             },
             componentProps: {
                 title: 'Coze',
+                defaultOpen: true, // 聊天窗口默认展开
             },
         });
     </script>
